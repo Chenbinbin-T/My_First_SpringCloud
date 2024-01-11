@@ -16,6 +16,7 @@
         <module>SpringCloud-provider-dept-hystrix-8002</module>
         <module>SpringCloud-consumer-hystrix-dashboard</module>
         <module>SpringCloud-gateway-9527</module>
+        <module>SpringCloud-config-server-3344</module>
     </modules>
     <groupId>org.example</groupId>
     <artifactId>SpringCloud-test-01-other</artifactId>
