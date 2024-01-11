@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringCloud-gateway-9527" />
+        <module name="SpringCloud-provider-dept-hystrix-8002" />
+        <module name="SpringCloud-consumer-hystrix-dashboard" />
+        <module name="SpringCloud-eureka-7004" />
+        <module name="SpringCloud-api" />
+        <module name="SpringCloud-dept-8002" />
+        <module name="SpringCloud-eureka-7002" />
+        <module name="SpringCloud-provider-dept-8003" />
+        <module name="SpringCloud-consumer-dept-feign" />
+        <module name="SpringCloud-consumer-dept-8080" />
+        <module name="SpringCloud-eureka-7003" />
+        <module name="SpringCloud-provider-dept-8004" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="18" />
+      <module name="SpringCloud-dept-8001" target="11" />
+      <module name="SpringCloud-eureka-7001" target="11" />
+      <module name="SpringCloud-provider-dept-8002" target="1.8" />
+      <module name="untitled" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringCloud-consumer-dept-8080" options="" />
+      <module name="SpringCloud-eureka-7003" options="" />
+      <module name="SpringCloud-provider-dept-8002" options="" />
+      <module name="demo" options="-parameters" />
+    </option>
+  </component>
+</project>

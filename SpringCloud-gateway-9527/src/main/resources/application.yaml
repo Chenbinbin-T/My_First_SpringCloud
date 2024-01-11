@@ -1,0 +1,25 @@
+server:
+  port: 9527
+
+
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 让Eureka发现
+          lower-case-service-id: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7002/eureka/,http://localhost:7003/eureka/,http://localhost:7004/eureka/
+      register-with-eureka: true
+      fetch-registry: true
+  instance:
+    instance-id: gateway9527.com #替换地址名字
+    prefer-ip-address: false
+
+

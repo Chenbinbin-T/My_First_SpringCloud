@@ -1,0 +1,45 @@
+server:
+  port: 8004
+
+mybatis:
+  type-aliases-package: pojo
+  mapper-locations: classpath:/mapper/*.xml
+
+spring:
+  application:
+    name: SpringCloud-Provider-Dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url : jdbc:mysql://localhost:3306/db03?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+
+# EUREKA的配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7002/eureka/,http://localhost:7003/eureka/,http://localhost:7004/eureka/
+  instance:
+    instance-id: springcloud-provider-dept-8004
+
+management:
+  endpoints:
+    web:
+      exposure:
+        #默认值访问health,info端点  用*可以包含全部端点
+        include: "*"
+      #修改访问路径 2.0之前默认是/; 2.0默认是/actuator可以通过这个属性值修改
+      base-path: /actuator
+  endpoint:
+    shutdown:
+      enabled: true #打开shutdown端点
+    health:
+      show-details: always #获得健康检查中所有指标的详细信息
+
+info:
+  app.name: cdasjkhhdklasjkldasj
+  company.name: cbdsakjdjaslkjdlkas
+
+
+

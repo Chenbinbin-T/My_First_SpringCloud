@@ -1,0 +1,18 @@
+server:
+  port: 7002
+
+spring:
+  freemarker:
+    prefer-file-system-access: false
+
+# Eureka的配置
+eureka:
+  instance:
+    hostname: Eureka-7002 # Eureka服务端的实例名称
+  client:
+    registerWithEureka: false # 是否向eureka注册中心注册自己
+    fetchRegistry: false # 如果为false，则表示自己为注册中心
+    serviceUrl: # 监控页面地址设置
+#      defaultZone: https://${eureka.instance.hostname}:${server.port}/eureka/ # 此为单机的方法
+      # 集群方法
+      defaultZone: http://localhost:7003/eureka/,http://localhost:7004/eureka/

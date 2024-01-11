@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+# EUREKA的配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7002/eureka/,http://localhost:7003/eureka/,http://localhost:7004/eureka/
+    register-with-eureka: false # 不向Eureka注册自己
+
+# Spring Cloud 提供了重试机制，直接在配置文件进行配置即可，但如果加了重试，请务必保证有更新操作接口的幂等性
+spring:
+  application:
+    name: consumer
+  cloud:
+    loadbalancer:
+      # 以下配置为 LoadBalancerProperties 配置类
+      clients:
+        # default 表示全局配置，如要针对某个服务，则填写对应的服务名即可
+        default:
+          retry:
+            enabled: true
+            # 是否所有的请求都重试，false 表示只有 GET 请求才重试
+            retryOnAllOperations: true
+            # 同一个实例的重试次数，不包括第一次调用；比如填了 3，实际会调用 4 次
+            maxRetriesOnSameServiceInstance: 3
+            # 其他实例的重试次数，多节点的情况下使用
+            maxRetriesOnNextServiceInstance: 0

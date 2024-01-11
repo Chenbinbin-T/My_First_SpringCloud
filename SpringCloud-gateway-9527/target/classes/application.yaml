@@ -1,0 +1,33 @@
+server:
+  port: 9527
+
+
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+#      routes: # 配置路由id，路由到微服务的uri，判断条件
+#      - id: gateway
+#        uri: lb://springcloud-gateway # 此处放的是gateway在Eureka中的名字
+#        predicates:
+#          - Path=/com/**
+#        filters:
+#          - StripPrefix=1
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7002/eureka/,http://localhost:7003/eureka/,http://localhost:7004/eureka/
+      register-with-eureka: true
+      fetch-registry: true
+  instance:
+    instance-id: gateway9527.com #替换地址名字
+    prefer-ip-address: false
+
+
